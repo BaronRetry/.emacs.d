@@ -21,20 +21,21 @@
 
 (setq temporary-file-directory "C:/LocalData/")
 
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 
+;; Load packages via use-package
 
-(use-package ess-site)
-(use-package modus-themes)
+(use-package cider
+  :ensure t)
+
+(use-package ess-site
+  :ensure t)
+
+(use-package modus-themes
+  :ensure t)
 
 (load-theme 'modus-vivendi t)
 
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(default ((t (:family "Inconsolata Nerd Font" :foundry "outline" :slant normal :weight regular :height 100 :width normal)))))
